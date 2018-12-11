@@ -1,0 +1,27 @@
+apply plugin: 'eclipse'
+apply plugin: 'application'
+//apply the ArcGIS Java SDK Plug-in for Gradle With_3D-Add_Graphics-Surface_Placement
+apply plugin: 'com.esri.arcgisruntime.java'
+ buildscript {
+  repositories { maven { url 'https://esri.bintray.com/arcgis' } }
+  dependencies { 
+  	classpath 'com.esri.arcgisruntime:gradle-arcgis-java-plugin:1.0.0'
+  }
+  
+}
+ arcgis.version = '100.3.0'
+ // download javadoc
+eclipse.classpath.downloadJavadoc = true
+
+dependencies {
+    compile files('jars/vecmath-1.5.2.jar',
+    'jars/ArcGIS_Runtime_Java_Toolkit.jar',
+    'jars/commons-lang3-3.4.jar',
+    'jars/jcommon-1.0.17.jar',
+    'jars/jfreechart-1.0.14.jar',
+    'jars/jgrapht-core-1.0.0.jar',
+    'jars/parsii-1.5.jar',
+    'jars/vecmath-1.5.2.jar'
+    )
+    
+}
